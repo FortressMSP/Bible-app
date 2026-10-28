@@ -12,15 +12,25 @@ function parse(hash: string): Route {
   return { name: "home" };
 }
 
+// Only real navigations (hashchange) change the route; replaceQuietly() updates the
+// address bar while scrolling without remounting the feed.
+let currentHash = window.location.hash;
 const subscribe = (cb: () => void) => {
-  window.addEventListener("hashchange", cb);
-  return () => window.removeEventListener("hashchange", cb);
+  const onChange = () => {
+    currentHash = window.location.hash;
+    cb();
+  };
+  window.addEventListener("hashchange", onChange);
+  return () => window.removeEventListener("hashchange", onChange);
 };
 
 export function useRoute(): Route {
-  const hash = useSyncExternalStore(subscribe, () => window.location.hash);
+  const hash = useSyncExternalStore(subscribe, () => currentHash);
   return parse(hash);
 }
+
+/** Identity of the current navigation, for keying screens. */
+export const useRouteKey = () => useSyncExternalStore(subscribe, () => currentHash);
 
 export const href = {
   home: () => "#/",

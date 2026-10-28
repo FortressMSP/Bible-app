@@ -23,6 +23,15 @@ export const CANON: { id: string; name: string; testament: Testament }[] = [
   ["3john", "3 John"], ["jude", "Jude"], ["revelation", "Revelation"],
 ].map(([id, name], i) => ({ id, name, testament: i < 39 ? "OT" : "NT" }));
 
+/** USFM book codes used by API.Bible, in canonical order. */
+export const USFM = [
+  "GEN", "EXO", "LEV", "NUM", "DEU", "JOS", "JDG", "RUT", "1SA", "2SA", "1KI", "2KI", "1CH", "2CH",
+  "EZR", "NEH", "EST", "JOB", "PSA", "PRO", "ECC", "SNG", "ISA", "JER", "LAM", "EZK", "DAN", "HOS",
+  "JOL", "AMO", "OBA", "JON", "MIC", "NAM", "HAB", "ZEP", "HAG", "ZEC", "MAL",
+  "MAT", "MRK", "LUK", "JHN", "ACT", "ROM", "1CO", "2CO", "GAL", "EPH", "PHP", "COL", "1TH", "2TH",
+  "1TI", "2TI", "TIT", "PHM", "HEB", "JAS", "1PE", "2PE", "1JN", "2JN", "3JN", "JUD", "REV",
+];
+
 export interface Verse {
   v: number;
   t: string;
@@ -30,15 +39,24 @@ export interface Verse {
   cont?: boolean;
 }
 export interface Passage {
+  /** Section heading printed above this passage (e.g. NKJV "The Fall of Man"). */
+  heading?: string;
   poetry: boolean;
   verses: Verse[];
 }
-export interface Chapter {
-  n: number;
+
+/** One chapter as served by /api/chapter/:book/:chapter. */
+export interface ChapterData {
+  book: string;
+  chapter: number;
+  /** Translation abbreviation shown with the text, e.g. "NKJV". */
+  translation: string;
+  copyright: string;
+  /** Superscription such as a psalm title. */
   title?: string;
   passages: Passage[];
-}
-export interface BookText {
-  id: string;
-  chapters: Chapter[];
+  /** API.Bible Fair Use Management System token to report when the text is shown. */
+  fumsId?: string;
+  /** FUMS script location from API.Bible (`meta.fumsJsInclude`), usually without a scheme. */
+  fumsScript?: string;
 }

@@ -11,6 +11,16 @@ export interface Progress {
   dailyGoal: number;
   /** Total passages the reader opened commentary on. */
   deepDives: number;
+  /** Saved (liked) passages, newest first. References only — no licensed text is stored. */
+  saved: SavedRef[];
+}
+
+export interface SavedRef {
+  book: string;
+  chapter: number;
+  from: number;
+  to: number;
+  at: number;
 }
 
 const KEY = "scroll-bible-progress-v1";
@@ -21,6 +31,7 @@ const initial: Progress = {
   today: { chapters: 0 },
   dailyGoal: 3,
   deepDives: 0,
+  saved: [],
 };
 
 function load(): Progress {
@@ -148,4 +159,33 @@ export function recordDeepDive() {
 
 export function setDailyGoal(goal: number) {
   set({ ...state, dailyGoal: goal });
+}
+
+const sameRef = (a: Omit<SavedRef, "at">, b: Omit<SavedRef, "at">) =>
+  a.book === b.book && a.chapter === b.chapter && a.from === b.from && a.to === b.to;
+
+export const isSaved = (p: Progress, ref: Omit<SavedRef, "at">) => p.saved.some((s) => sameRef(s, ref));
+
+/** Save or unsave a passage; returns the new saved state. */
+export function toggleSaved(ref: Omit<SavedRef, "at">, save?: boolean): boolean {
+  const has = isSaved(state, ref);
+  const want = save ?? !has;
+  if (want === has) return has;
+  set({
+    ...state,
+    saved: want ? [{ ...ref, at: Date.now() }, ...state.saved] : state.saved.filter((s) => !sameRef(s, ref)),
+  });
+  if (want && state.saved.length === 1) toast({ icon: "❤️", title: "Saved!", body: "Find your saved passages on the home screen." });
+  return want;
+}
+
+/** Minutes spent in the feed this session, for gentle "time well spent" nudges. */
+let feedMs = 0;
+const NUDGES = [5, 15, 30, 60];
+export function addFeedTime(ms: number) {
+  const before = Math.floor(feedMs / 60000);
+  feedMs += ms;
+  const after = Math.floor(feedMs / 60000);
+  const hit = NUDGES.find((m) => before < m && after >= m);
+  if (hit) toast({ icon: "🙌", title: `${hit} minutes in Scripture`, body: "That's time well spent." });
 }

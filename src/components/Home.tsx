@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { BOOKS, CHAPTER_COUNTS, getBook } from "../data/books";
 import type { Testament } from "../data/types";
-import { loadBook, verseText } from "../lib/bible";
+import { loadVerse } from "../lib/scripture";
 import { dayKey, liveStreak, setDailyGoal, todayCount, totalCompleted, useProgress } from "../lib/progress";
 import { href } from "../lib/router";
 import { ProgressRing } from "./ProgressRing";
@@ -32,7 +32,7 @@ export function Home() {
       <header className="home-header">
         <div>
           <h1 className="logo">Scroll</h1>
-          <p className="muted">The whole story, one chapter at a time.</p>
+          <p className="muted">Swipe through Scripture, not your feed.</p>
         </div>
         <div className="stats">
           <div className="stat" title={`Best streak: ${progress.streak.best} days`}>
@@ -64,18 +64,20 @@ export function Home() {
           <div className="continue-bar">
             <div style={{ width: `${((progress.completed[last.book]?.length ?? 0) / CHAPTER_COUNTS[last.book]) * 100}%` }} />
           </div>
-          <span className="cta">Pick up where you left off →</span>
+          <span className="cta">Keep swiping →</span>
         </a>
       ) : (
-        <a className="continue-card" href={href.book("genesis")}>
-          <span className="card-kicker">Start the journey</span>
+        <a className="continue-card" href={href.read("genesis", 1)}>
+          <span className="card-kicker">Start swiping</span>
           <strong>In the beginning…</strong>
-          <span className="muted">Begin with Genesis, or start anywhere below. The Gospel of John is a great first read too.</span>
-          <span className="cta">Open Genesis →</span>
+          <span className="muted">One passage per swipe, from Genesis onward. Or pick any book below — John is a great first read.</span>
+          <span className="cta">Start with Genesis →</span>
         </a>
       )}
 
       <VerseOfTheDay />
+
+      <Saved />
 
       {total > 0 && (
         <p className="journey muted">
@@ -129,24 +131,42 @@ function VerseOfTheDay() {
     const n = d.split("-").reduce((a, x) => a * 31 + Number(x), 7);
     return BOOKS[n % BOOKS.length];
   }, []);
-  const [text, setText] = useState<string>();
+  const [verse, setVerse] = useState<{ text: string; translation: string }>();
   useEffect(() => {
     let live = true;
-    loadBook(book.id).then((t) => live && setText(verseText(t, book.keyVerse)), () => {});
+    loadVerse(book.id, book.keyVerse).then((v) => live && setVerse(v), () => {});
     return () => {
       live = false;
     };
   }, [book]);
-  if (!text) return null;
+  if (!verse) return null;
   const [c] = book.keyVerse.split(":");
   return (
     <a className="votd" href={href.read(book.id, Number(c))}>
       <span className="card-kicker">Verse of the day</span>
-      <blockquote>“{text}”</blockquote>
+      <blockquote>“{verse.text}”</blockquote>
       <span className="votd-ref">
-        {book.name} {book.keyVerse} →
+        {book.name} {book.keyVerse} {verse.translation} →
       </span>
     </a>
+  );
+}
+
+function Saved() {
+  const { saved } = useProgress();
+  if (!saved.length) return null;
+  return (
+    <section className="saved">
+      <h2>❤️ Saved</h2>
+      <div className="saved-list">
+        {saved.slice(0, 12).map((s) => (
+          <a key={`${s.book}${s.chapter}:${s.from}`} href={href.read(s.book, s.chapter)}>
+            {getBook(s.book)?.name} {s.chapter}:{s.from}
+            {s.to !== s.from ? `–${s.to}` : ""}
+          </a>
+        ))}
+      </div>
+    </section>
   );
 }
 

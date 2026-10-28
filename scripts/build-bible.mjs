@@ -1,7 +1,7 @@
-// Converts the World English Bible (public domain) from the `world-english-bible`
+// Development fallback: converts the World English Bible (public domain) from the `world-english-bible`
 // npm package into compact per-book JSON files the app loads on demand.
 //
-// Output: public/bible/<bookId>.json
+// Output: .data/web/<bookId>.json
 //   { id, chapters: [{ n, title?, passages: [{ poetry, verses: [{ v, t, cont? }] }] }] }
 //
 // A "passage" is one paragraph (prose) or stanza (poetry) as laid out in the WEB.
@@ -13,7 +13,8 @@ import { fileURLToPath } from "node:url";
 const here = path.dirname(fileURLToPath(import.meta.url));
 const require = createRequire(import.meta.url);
 const srcDir = path.join(path.dirname(require.resolve("world-english-bible/package.json")), "json");
-const outDir = path.join(here, "..", "public", "bible");
+// Server-only: the dev fallback text is served through /api/chapter like the NKJV.
+const outDir = path.join(here, "..", ".data", "web");
 
 const BOOK_IDS = [
   "genesis", "exodus", "leviticus", "numbers", "deuteronomy", "joshua", "judges", "ruth",
@@ -117,5 +118,5 @@ if (existsSync(marker) && statSync(marker).mtimeMs > statSync(fileURLToPath(impo
     }
     writeFileSync(path.join(outDir, `${id}.json`), JSON.stringify(book));
   }
-  console.log(`wrote ${BOOK_IDS.length} books, ${chapterCount} chapters, ${verses} verses to public/bible/`);
+  console.log(`wrote ${BOOK_IDS.length} books, ${chapterCount} chapters, ${verses} verses to .data/web/`);
 }

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { CHAPTER_COUNTS, getBook } from "../data/books";
-import { loadBook, verseText } from "../lib/bible";
+import { loadVerse } from "../lib/scripture";
 import { useProgress } from "../lib/progress";
 import { href } from "../lib/router";
 
@@ -9,12 +9,12 @@ export function BookIntro({ bookId }: { bookId: string }) {
   const count = CHAPTER_COUNTS[bookId];
   const progress = useProgress();
   const done = new Set(progress.completed[bookId] ?? []);
-  const [keyVerse, setKeyVerse] = useState<string>();
+  const [keyVerse, setKeyVerse] = useState<{ text: string; translation: string }>();
 
   useEffect(() => {
     window.scrollTo({ top: 0 });
     let live = true;
-    loadBook(bookId).then((t) => live && setKeyVerse(verseText(t, book.keyVerse)), () => {});
+    loadVerse(bookId, book.keyVerse).then((v) => live && setKeyVerse(v), () => {});
     return () => {
       live = false;
     };
@@ -77,12 +77,15 @@ export function BookIntro({ bookId }: { bookId: string }) {
 
       {keyVerse && (
         <blockquote className="key-verse">
-          “{keyVerse}”<cite>{book.name} {book.keyVerse}</cite>
+          “{keyVerse.text}”
+          <cite>
+            {book.name} {book.keyVerse} {keyVerse.translation}
+          </cite>
         </blockquote>
       )}
 
       <a className="primary-btn" href={href.read(bookId, resume ?? 1)}>
-        {started && resume ? `Continue at chapter ${resume}` : `Start reading ${book.name}`}
+        {started && resume ? `Keep swiping at chapter ${resume}` : `Start swiping ${book.name}`}
       </a>
 
       <section className="chapters">

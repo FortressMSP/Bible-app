@@ -1,63 +1,97 @@
-# Scroll — a Bible reader built to keep you reading
+# Scroll — swipe through Scripture
 
-Scroll lets you move through the Bible book by book, chapter by chapter, in one continuous feed. It frames every step with context so you know what to look for and come away with something to think about.
+Scroll is the Reels/TikTok-style feed, but for the Bible. It's built to replace doom scrolling: one full-screen card per swipe, and the feed never runs out. It flows passage by passage, chapter by chapter, and book by book through the whole Bible, then loops from Revelation back to Genesis.
 
-## What it does
+It makes **no AI requests**. Scripture is the **New King James Version** via [API.Bible](https://api.bible). Commentary is **Matthew Henry's Concise Commentary** (public domain), bundled with the app.
 
-- **Book previews.** Before you open a book you see who wrote it and when, a short preview, its key themes, three things to watch for, and its key verse. All 66 books have hand-written previews.
-- **Chapter previews.** Each chapter opens with an AI-generated card: an evocative title, a hook, where you are in the story, and three questions to keep in mind.
-- **Continuous scroll.** Chapters load into one feed as you go. You never hit a "next page" button.
-- **Chapter summaries.** At the end of each chapter you get a recap, key moments, a reflection question, and an *Up next* teaser for the following chapter.
-- **Book summaries.** Finishing a book shows a celebration, a big-picture summary, three takeaways, and a teaser that hands off to the next book.
-- **Passage commentary.** Tap **✦ Go deeper** on any paragraph or stanza. You get background, meaning, cross-references, and a "for today" thought. Suggested follow-up questions (or your own question) keep the conversation going, and each answer suggests more.
-- **Engagement hooks.** Daily streak 🔥, a daily chapter goal (tap the ring to change it), milestone and deep-dive toasts, per-book progress rings, "continue reading", and a verse of the day.
+## The feed
 
-Scripture text is the **World English Bible** (public domain). The build step generates it from the [`world-english-bible`](https://www.npmjs.com/package/world-english-bible) package.
+Every swipe snaps to exactly one card:
 
-## Running it
+| Card | What it shows |
+| --- | --- |
+| **Book cover** | Book name, tagline, author, date and length |
+| **Before you begin** | Hand-written book preview and themes |
+| **Watch for** | Three things to look for, plus the key verse |
+| **Chapter intro** | Chapter number, psalm title, reading time, and Henry's outline of the chapter ("In this chapter") |
+| **Passage** | One paragraph or stanza (long ones are split at verse boundaries), with NKJV section headings |
+| **Insight** | A quotable line from Matthew Henry, dropped in between passages, with *Read the full note* |
+| **Chapter complete** | ✓ with a recap, your streak and daily goal, a reflection question, and an *Up next* teaser |
+| **Book complete** | 🎉 with a book summary and takeaways; the next book's cover follows right after |
+
+On passage cards:
+- **Double-tap** to save (heart burst), or use the ❤️ button.
+- **📜 Notes** opens Matthew Henry's commentary on those verses in a bottom sheet.
+- **↗ Share** opens the native share sheet, or copies to the clipboard.
+
+Engagement hooks:
+- Daily streak 🔥 and a daily chapter goal (tap the ring on the home screen to change it).
+- Milestone toasts and "N minutes in Scripture" nudges.
+- A progress bar per chapter.
+- Saved passages, continue reading, and a verse of the day.
+
+A chapter only counts toward your streak if you actually viewed at least half of its passage cards. Flinging past a chapter shows it as *skimmed* instead.
+
+Keyboard: ↓/↑, j/k, Space and PageUp/PageDown move between cards.
+
+## Setup
 
 ```bash
 npm install
-export ANTHROPIC_API_KEY=sk-ant-...   # enables previews, summaries and commentary
-npm run dev                           # web on http://localhost:5173, API on :8787
+cp .env.example .env          # add BIBLE_API_KEY
+npm run find-bible            # prints the NKJV id for your key; put it in BIBLE_ID
+npm run dev                   # http://localhost:5173 (API on :8787)
 ```
 
-Production:
+Production (serves the built app and the API from one Node process):
 
 ```bash
 npm run build
-npm start          # serves the built app and the API on $PORT (default 8787)
+npm start                     # PORT defaults to 8787
 ```
 
-Without an API key the app still works fully as a reader. The AI cards fall back to the book's own "watch for" prompts, a generic reflection question, and the next chapter's opening line as the teaser. To work on the UI without spending tokens, run the server with `INSIGHT_MOCK=1` to get placeholder content.
+Without `BIBLE_API_KEY` and `BIBLE_ID`, the server falls back to the public-domain World English Bible. Use this for development and design work only. The translation label on every card shows which text you're seeing.
 
-### Configuration
+### Install on a phone
 
-| Variable | Default | Purpose |
-| --- | --- | --- |
-| `ANTHROPIC_API_KEY` | — | Claude API key (or any credential the Anthropic SDK resolves) |
-| `BIBLE_MODEL` | `claude-opus-5-5` | Model used for insights |
-| `INSIGHT_CACHE_DIR` | `.cache/insights` | Where generated insights are cached |
-| `INSIGHT_MOCK` | — | `1` returns placeholder insights |
-| `PORT` | `8787` | API / production server port |
+The app is a Progressive Web App. Open it in Safari (iOS) or Chrome (Android) and choose **Add to Home Screen**. It then launches full-screen like a native app. The service worker caches only the app shell and the public-domain commentary. NKJV text is always fetched live.
 
-## How it's built
+## API.Bible licensing notes
+
+- The API key stays on the server. Browsers call `/api/chapter/:book/:chapter`, and the server calls API.Bible.
+- Fetched chapters are cached **in server memory only**, for `BIBLE_CACHE_TTL_MINUTES` (default 60), up to 300 chapters. Nothing is written to disk, and browsers don't store scripture text. Saved passages store references only.
+- **FUMS:** each chapter response's `meta.fumsId` is passed to the browser. The browser reports it through API.Bible's FUMS script (`meta.fumsJsInclude`) when that text is shown: passages, key verses, verse of the day.
+- The `copyright` string from API.Bible is shown on each chapter intro card, and the translation label appears on every passage.
+- **Check before launch:** confirm these settings match your license. In particular, check whether reusing a cached response's `fumsId` for later views is acceptable, or whether the cache should be shortened.
+
+## Commentary
+
+`public/commentary/<book>.json` holds Matthew Henry's Concise Commentary on the Whole Bible, marked "Public Domain — Copy Freely". It was extracted from the CrossWire SWORD module packaged by Debian/Ubuntu as `sword-comm-mhcc`. To regenerate it:
+
+```bash
+pip install pysword
+python3 scripts/commentary/extract.py /usr/share/sword raw.json    # path containing modules/comments/rawcom/mhcc
+python3 scripts/commentary/convert.py raw.json public/commentary genesis,exodus,...,revelation
+```
+
+`convert.py`'s third argument is the 66 book ids in canonical order, comma-separated (see `src/data/canon.ts`).
+
+Known gaps: the module has no section notes for 140 of 1,189 chapters (139 have neither notes nor an outline), Psalm 23 and Psalm 150 among them. On those chapters the *Notes* button is dimmed, and the intro card falls back to the NKJV section headings.
+
+## Project layout
 
 ```
-scripts/build-bible.mjs   WEB JSON  ->  public/bible/<book>.json (chapters -> passages -> verses)
-src/data/books-*.ts       hand-written previews/summaries for all 66 books
-server/insights.ts        Claude calls with JSON-schema structured output, disk cache, request dedupe
-src/components/Reader.tsx continuous scroll, chapter tracking, completion and streaks
-src/components/CommentarySheet.tsx  passage commentary + follow-up Q&A
+server/index.ts            Express: /api/chapter + production static hosting
+server/scripture.ts        API.Bible (NKJV) or WEB fallback, in-memory cache
+server/apibible.ts         API.Bible client + JSON content parser (tested in apibible.test.ts)
+src/lib/slides.ts          builds feed cards from chapters + commentary
+src/components/Feed.tsx    full-screen snap feed, windowed rendering, infinite loading
+src/components/SlideView.tsx  card designs
+src/components/NotesSheet.tsx Matthew Henry bottom sheet
+src/data/books-*.ts        hand-written previews/summaries for all 66 books
+public/commentary/         Matthew Henry's Concise Commentary (public domain)
+scripts/build-bible.mjs    WEB development text -> .data/web
+scripts/find-bible.mjs     look up your NKJV Bible id
 ```
 
-- The server reads the scripture text itself, so clients only send references (book, chapter, passage index) and can't inject arbitrary prompts. The one exception is the free-text follow-up question, which is capped at 300 characters.
-- Every insight is generated once and cached on disk by (model, kind, reference, question). Each chapter preview, summary and commentary is paid for only once across all readers. The client also prefetches the next chapter's preview while you read.
-- Requests use the `fallbacks: "default"` server-side refusal fallback, so if the model declines a request the API retries it on a recommended fallback model.
-- Reading progress lives in the browser's `localStorage`. There are no accounts.
-
-### Things to consider before a public launch
-
-- Add rate limiting on `/api/insight` (follow-up questions are free text and not shared across users, so they're the main cost driver).
-- You can pre-generate all chapter previews and summaries (2,378 requests) with a batch job so first readers never wait.
-- Accounts and sync, if you want streaks to follow people across devices.
+`npm test` runs the API.Bible parser tests. `npm run typecheck` runs the type checker.
