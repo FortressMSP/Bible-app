@@ -1,0 +1,707 @@
+import type { BookInfo } from "./types";
+
+export const NT_BOOKS: BookInfo[] = [
+  {
+    id: "matthew",
+    name: "Matthew",
+    testament: "NT",
+    genre: "Gospel",
+    author: "Traditionally Matthew (Levi), the tax collector and apostle",
+    written: "c. AD 70–85 (some date it earlier, c. AD 60s)",
+    tagline: "The long-awaited King arrives — and he isn’t what anyone expected.",
+    preview:
+      "For four hundred years Israel had waited for a word from God. Matthew opens with a family tree that stretches back to Abraham and David, then announces that the promised King has finally come. But this King is born in obscurity, preaches blessing to the poor, and wears a crown of thorns. What kind of kingdom is this?",
+    themes: ["Jesus as Messiah and King", "The kingdom of heaven", "Fulfilled prophecy", "True righteousness"],
+    watchFor: [
+      "Count how often Matthew says something happened “to fulfill” what the prophets said.",
+      "Notice the five big blocks of Jesus’ teaching, starting with the Sermon on the Mount (chapters 5–7).",
+      "Watch how outsiders — foreign magi, a Roman centurion, a Canaanite woman — often grasp who Jesus is before insiders do.",
+    ],
+    keyVerse: "28:19",
+    summary:
+      "Matthew presents Jesus as the fulfillment of Israel’s story: the son of David, the new Moses who teaches from a mountain, and the true Israel who passes the test in the wilderness. Through parables, miracles, and sharp conflict with religious leaders, Jesus announces a kingdom where the humble are lifted up and righteousness runs deeper than rule-keeping.\n\nThe story climbs to Jerusalem, where the King is rejected and crucified under a sign reading “King of the Jews.” Yet the tomb is empty. The risen Jesus gathers his followers on a mountain and sends them to all nations, promising to be with them always — the God who is “with us” from the first chapter to the last.",
+    takeaways: [
+      "Jesus is the long-promised King who fulfills Israel’s hopes.",
+      "God’s kingdom turns the world’s values upside down.",
+      "The risen Jesus promises his presence to the very end.",
+    ],
+    bridge: "Next, Mark tells the same story at a breathless sprint — buckle up.",
+  },
+  {
+    id: "mark",
+    name: "Mark",
+    testament: "NT",
+    genre: "Gospel",
+    author: "Traditionally John Mark, drawing on Peter’s preaching",
+    written: "c. AD 55–70",
+    tagline: "Fast, urgent, raw: the Gospel that never stops moving.",
+    preview:
+      "Mark skips the birth stories and drops you straight into the action. Jesus heals, casts out demons, calms storms — and then keeps telling people not to tell anyone. His own disciples are constantly confused. The shortest Gospel keeps asking one burning question: who is this man?",
+    themes: ["The identity of Jesus", "The suffering servant", "Discipleship and misunderstanding", "Faith and fear"],
+    watchFor: [
+      "Look for the word “immediately” — Mark uses it dozens of times to keep the pace racing.",
+      "Notice why Jesus keeps telling people to stay quiet about him (the so-called “messianic secret”).",
+      "Watch for the turning point in chapter 8 when Peter finally names Jesus as the Messiah — and what happens right after.",
+    ],
+    keyVerse: "10:45",
+    summary:
+      "Mark’s Gospel moves at a breakneck pace through Jesus’ ministry in Galilee, full of power and wonder, until Peter confesses that Jesus is the Messiah. From there the story turns toward Jerusalem and the cross, as Jesus repeatedly explains that the Son of Man must suffer, die, and rise — and his disciples repeatedly fail to understand.\n\nThe climax is stark: Jesus dies abandoned, and the first person to call him “Son of God” is a Roman centurion at the cross. The earliest manuscripts end abruptly with frightened women fleeing the empty tomb, leaving the reader to ask: now that you know, what will you do?",
+    takeaways: [
+      "Jesus’ greatness is revealed through serving and suffering.",
+      "Even confused, failing disciples are not abandoned.",
+      "The story invites you to finish it with your own response.",
+    ],
+    bridge: "Next, Luke slows down to give an “orderly account” — full of outsiders, meals, and joy.",
+  },
+  {
+    id: "luke",
+    name: "Luke",
+    testament: "NT",
+    genre: "Gospel",
+    author: "Traditionally Luke, a physician and companion of Paul",
+    written: "c. AD 60–85",
+    tagline: "Good news for the poor, the lost, and the left out.",
+    preview:
+      "Luke writes like a careful historian, investigating everything for a reader named Theophilus. His story is crowded with people others overlooked: shepherds, widows, lepers, tax collectors, Samaritans, and women who funded Jesus’ ministry. Why does Jesus keep eating with the wrong people — and why do they keep finding joy at his table?",
+    themes: ["Salvation for all people", "Care for the poor and outcast", "Prayer and the Holy Spirit", "Joy and celebration"],
+    watchFor: [
+      "Notice how often Jesus is found praying, especially before major moments.",
+      "Watch for meals — Luke’s Jesus is constantly at someone’s table.",
+      "Look for parables found only in Luke, like the Good Samaritan and the Prodigal Son.",
+    ],
+    keyVerse: "19:10",
+    summary:
+      "Luke begins with songs of praise around the births of John the Baptist and Jesus, then follows Jesus as he announces “good news to the poor” in his hometown synagogue. Much of the Gospel is a long journey to Jerusalem filled with unforgettable parables of lost sheep, lost coins, and lost sons — each ending in celebration when the lost is found.\n\nJesus is crucified while forgiving his executioners and welcoming a dying thief into paradise. After the resurrection, he walks unrecognized with two discouraged disciples on the road to Emmaus and is revealed as he breaks bread. Luke closes with the disciples worshipping in the temple, waiting for the power that is coming.",
+    takeaways: [
+      "No one is too far gone for God’s seeking love.",
+      "Jesus’ kingdom has special room for the overlooked.",
+      "Joy is heaven’s response to every return home.",
+    ],
+    bridge: "Next, John steps back to the very beginning — before time itself — to tell you who Jesus really is.",
+  },
+  {
+    id: "john",
+    name: "John",
+    testament: "NT",
+    genre: "Gospel",
+    author: "Traditionally the apostle John, “the disciple whom Jesus loved”",
+    written: "c. AD 85–95",
+    tagline: "In the beginning was the Word — and the Word became flesh.",
+    preview:
+      "John doesn’t start in Bethlehem; he starts before creation. This Gospel is different: fewer parables, longer conversations, and seven dramatic “signs” that point to something bigger. Jesus makes astonishing claims — “I am the bread of life,” “I am the resurrection.” John wrote so that you might believe. Will you?",
+    themes: ["Jesus as the divine Word", "Belief and eternal life", "Light versus darkness", "Love and abiding"],
+    watchFor: [
+      "Track the seven signs, starting with water turned into wine at a wedding.",
+      "Notice the seven “I am” statements and how they echo God’s name in Exodus.",
+      "Watch for one-on-one conversations — Nicodemus at night, the Samaritan woman at noon — and how each person responds.",
+    ],
+    keyVerse: "20:31",
+    summary:
+      "John’s Gospel reveals Jesus as the eternal Word, the one who was with God and was God, now living among us. Through miraculous signs and probing conversations, people are drawn either toward the light or away from it. The longest section slows to a single night: Jesus washes his disciples’ feet, gives a new command to love, promises the Spirit, and prays for all who will believe.\n\nOn the cross Jesus declares, “It is finished.” Then a grieving Mary Magdalene meets him alive in a garden, doubting Thomas touches his wounds, and Peter, who denied him three times, is restored three times by a lakeside breakfast. Belief, John says, leads to life.",
+    takeaways: [
+      "Jesus reveals what God is like, up close and in person.",
+      "Believing in him opens the door to life that lasts.",
+      "Love for one another is the mark of his followers.",
+    ],
+    bridge: "Next, Acts shows what happens when that Spirit actually arrives — and a small band of followers turns the world upside down.",
+  },
+  {
+    id: "acts",
+    name: "Acts",
+    testament: "NT",
+    genre: "History",
+    author: "Traditionally Luke, as the sequel to his Gospel",
+    written: "c. AD 62–85",
+    tagline: "Fire falls, prisons shake, and the gospel races to Rome.",
+    preview:
+      "Jesus has risen and ascended, and his followers are huddled in Jerusalem, waiting. Then wind roars, flames appear, and timid fishermen start preaching to thousands. Acts is a story of shipwrecks, riots, jailbreaks, and dramatic conversions. Can a tiny Jewish movement really reach the ends of the earth?",
+    themes: ["The Holy Spirit’s power", "Witness to the nations", "Jews and Gentiles united", "Courage under persecution"],
+    watchFor: [
+      "Follow the map: Jerusalem, Judea and Samaria, then the ends of the earth (1:8 is the outline).",
+      "Notice how the spotlight shifts from Peter in the first half to Paul in the second.",
+      "Watch for the “we” passages where the narrator seems to join Paul’s travels.",
+    ],
+    keyVerse: "1:8",
+    summary:
+      "Acts traces the explosive growth of the early church, beginning with the outpouring of the Holy Spirit at Pentecost. Peter and the apostles preach boldly in Jerusalem despite arrests, and Stephen becomes the first martyr. Persecution scatters believers, and the message spreads to Samaria, an Ethiopian official, and a Roman centurion named Cornelius.\n\nThe church’s fiercest persecutor, Saul, meets the risen Jesus and becomes Paul, the great missionary to the Gentiles. Councils debate how non-Jews can belong, and missionary journeys plant churches across the Mediterranean. The book ends with Paul under house arrest in Rome, still preaching “without hindrance” — an open ending for a story still unfolding.",
+    takeaways: [
+      "God’s Spirit empowers ordinary people to do extraordinary things.",
+      "The good news breaks down walls between peoples.",
+      "Opposition cannot stop what God has set in motion.",
+    ],
+    bridge: "Next, Romans lets you read Paul’s most famous letter — the gospel explained in full.",
+  },
+  {
+    id: "romans",
+    name: "Romans",
+    testament: "NT",
+    genre: "Epistle",
+    author: "The apostle Paul",
+    written: "c. AD 56–57",
+    tagline: "The gospel, laid out in full — and it changes everything.",
+    preview:
+      "Paul has never visited Rome, but he hopes to, and he writes ahead to introduce the message he has staked his life on. Romans wrestles with the biggest questions: What’s wrong with the world? How can anyone be right with God? What about Israel? It has sparked revivals and reformations for two thousand years.",
+    themes: ["Righteousness by faith", "Grace and sin", "Life in the Spirit", "God’s faithfulness to Israel and the nations"],
+    watchFor: [
+      "Notice how Paul builds his case step by step, often answering imagined objections (“What shall we say then?”).",
+      "Watch the shift from despair in chapter 7 to triumph in chapter 8.",
+      "Look at how chapters 12–16 turn theology into everyday life together.",
+    ],
+    keyVerse: "1:16",
+    summary:
+      "Romans begins by showing that all people, Jew and Gentile alike, have fallen short of God’s glory. Paul then unfolds the good news: God’s righteousness is given as a gift through faith in Jesus, just as Abraham was counted righteous by trusting God. Grace reigns where sin once did, and those united with Christ are freed to live by the Spirit, with nothing able to separate them from God’s love.\n\nPaul agonizes over his own people and insists God has not abandoned Israel. He closes with practical instructions: offer your lives as living sacrifices, love sincerely, and welcome one another across differences, as Christ has welcomed you.",
+    takeaways: [
+      "Everyone needs grace, and grace is offered to everyone.",
+      "Nothing can separate us from the love of God in Christ.",
+      "Right belief should become generous, welcoming life.",
+    ],
+    bridge: "Next, 1 Corinthians shows Paul tackling a brilliant, gifted, and deeply messy church.",
+  },
+  {
+    id: "1corinthians",
+    name: "1 Corinthians",
+    testament: "NT",
+    genre: "Epistle",
+    author: "The apostle Paul",
+    written: "c. AD 53–55",
+    tagline: "A gifted church, a messy church — and the way of love.",
+    preview:
+      "Corinth was a booming port city famous for wealth, status, and excess, and the church there had absorbed more of it than it realized. Factions, lawsuits, sexual scandal, and showy spiritual gifts were tearing them apart. Paul writes with frankness and tenderness. What does it look like to be the body of Christ in a culture like that?",
+    themes: ["Unity in Christ", "Wisdom of the cross", "Spiritual gifts and love", "The resurrection of the body"],
+    watchFor: [
+      "Notice how Paul answers specific questions the Corinthians wrote to him (“Now concerning…”).",
+      "Read chapter 13 in context — it’s written to a church fighting over gifts, not for a wedding.",
+      "Watch how Paul grounds everything in the resurrection in chapter 15.",
+    ],
+    keyVerse: "13:13",
+    summary:
+      "Paul confronts a church split into fan clubs, reminding them that the message of a crucified Messiah looks foolish to the world but is God’s wisdom and power. He addresses sexual immorality, lawsuits, marriage and singleness, food offered to idols, and disorder in worship, always asking what builds others up rather than what flatters the individual.\n\nThe church is one body with many parts, each needed. Above every gift stands love, patient and kind. Paul ends with a soaring defense of the resurrection: because Christ was raised, death will lose its sting, and nothing done for the Lord is in vain.",
+    takeaways: [
+      "The cross redefines what real wisdom and power look like.",
+      "Every member of the church matters to the whole body.",
+      "Love is the greatest gift, and resurrection is our hope.",
+    ],
+    bridge: "Next, 2 Corinthians shows a bruised but unbroken Paul opening his heart to the same church.",
+  },
+  {
+    id: "2corinthians",
+    name: "2 Corinthians",
+    testament: "NT",
+    genre: "Epistle",
+    author: "The apostle Paul",
+    written: "c. AD 55–56",
+    tagline: "Strength made perfect in weakness, from Paul’s most personal letter.",
+    preview:
+      "After a painful visit and a tearful letter, Paul’s relationship with the Corinthians is strained. Slick “super-apostles” have arrived, mocking Paul as weak and unimpressive. Instead of boasting in his strengths, Paul does something surprising: he boasts in his weaknesses. Why would anyone do that?",
+    themes: ["Power in weakness", "New creation", "Reconciliation", "Generous giving"],
+    watchFor: [
+      "Notice Paul’s raw emotions — joy, hurt, sarcasm, and deep affection all appear.",
+      "Watch for the image of “treasure in jars of clay” in chapter 4.",
+      "Look at the list of Paul’s hardships in chapter 11 and ask what kind of leader he is presenting.",
+    ],
+    keyVerse: "5:17",
+    summary:
+      "In this deeply personal letter, Paul defends his ministry not by résumé but by scars. He describes the gospel as a treasure carried in fragile clay jars, so that the power clearly belongs to God. Anyone in Christ is a new creation, and Paul pleads with the Corinthians to be reconciled to God and to one another.\n\nHe urges generous giving for poor believers in Jerusalem, pointing to Christ who became poor for their sake. Facing rivals who prize polish and power, Paul reluctantly boasts of beatings, shipwrecks, and a “thorn in the flesh,” and shares the word he received: “My grace is sufficient for you.”",
+    takeaways: [
+      "God’s power shows up most clearly in human weakness.",
+      "In Christ, everything can be made new.",
+      "Generosity flows from grace received.",
+    ],
+    bridge: "Next, Galatians finds Paul on fire, defending the freedom of the gospel at full volume.",
+  },
+  {
+    id: "galatians",
+    name: "Galatians",
+    testament: "NT",
+    genre: "Epistle",
+    author: "The apostle Paul",
+    written: "c. AD 48–55",
+    tagline: "Paul’s fiery manifesto for freedom in Christ.",
+    preview:
+      "Paul skips his usual thanksgiving and goes straight to alarm. Teachers have convinced Gentile believers in Galatia that to truly belong, they must adopt circumcision and the Jewish law. To Paul, this threatens the heart of the gospel. Is belonging to God earned, or received?",
+    themes: ["Justification by faith", "Freedom in Christ", "Law and promise", "Life by the Spirit"],
+    watchFor: [
+      "Notice how Paul tells his own story in chapters 1–2 to prove his gospel came from God.",
+      "Watch for the confrontation between Paul and Peter in Antioch.",
+      "Compare the “works of the flesh” and the “fruit of the Spirit” in chapter 5.",
+    ],
+    keyVerse: "2:20",
+    summary:
+      "Galatians is Paul’s urgent defense of the gospel of grace. He recounts how he received his message directly from the risen Christ and how he even opposed Peter when Peter withdrew from eating with Gentiles. People are made right with God through faith in Christ, not by works of the law, just as Abraham believed and was counted righteous.\n\nIn Christ there is neither Jew nor Greek, slave nor free, male nor female; all are one and are heirs of the promise. But freedom is not license. Those who walk by the Spirit bear fruit — love, joy, peace, patience — and carry one another’s burdens.",
+    takeaways: [
+      "We are accepted by grace through faith, not by performance.",
+      "Freedom in Christ is freedom to love and serve.",
+      "In Christ, old dividing lines no longer define us.",
+    ],
+    bridge: "Next, Ephesians zooms out to show the cosmic scope of what God is doing in Christ.",
+  },
+  {
+    id: "ephesians",
+    name: "Ephesians",
+    testament: "NT",
+    genre: "Epistle",
+    author: "Traditionally the apostle Paul (some scholars suggest a close follower)",
+    written: "c. AD 60–62 (if by Paul, during his imprisonment)",
+    tagline: "Seated in heaven, walking on earth: the church’s grand calling.",
+    preview:
+      "Ephesians opens with one breathtaking sentence of praise that runs for twelve verses in Greek. It paints the biggest picture of God’s plan: to bring all things together in Christ. Then it asks what such a calling looks like in marriages, workplaces, and spiritual battles. How do you live up to something that big?",
+    themes: ["Grace and salvation", "Unity of the church", "New life in Christ", "Spiritual warfare"],
+    watchFor: [
+      "Notice the shift from belief (chapters 1–3) to behavior (chapters 4–6), hinged on the word “therefore.”",
+      "Watch how Paul describes Jews and Gentiles becoming “one new humanity.”",
+      "Look at the armor of God in chapter 6 and what each piece represents.",
+    ],
+    keyVerse: "2:8",
+    summary:
+      "Ephesians celebrates every spiritual blessing believers have in Christ: chosen, redeemed, forgiven, and sealed by the Spirit. Once dead in sin, they have been made alive by grace through faith — not by their own doing, but as God’s gift. Christ has torn down the dividing wall between Jews and Gentiles, creating one new people and one household of God.\n\nThe second half calls the church to walk worthy of this calling: to maintain unity, grow up into maturity, put off the old self, speak truth in love, and submit to one another out of reverence for Christ. Finally, believers are to stand firm, clothed in the full armor of God.",
+    takeaways: [
+      "Salvation is a gift of grace, not an achievement.",
+      "Christ makes one family out of divided people.",
+      "A high calling shapes everyday relationships.",
+    ],
+    bridge: "Next, Philippians brings you a thank-you note from prison that overflows with joy.",
+  },
+  {
+    id: "philippians",
+    name: "Philippians",
+    testament: "NT",
+    genre: "Epistle",
+    author: "The apostle Paul",
+    written: "c. AD 60–62 (possibly earlier, from Ephesus)",
+    tagline: "Joy from a prison cell — and the secret of contentment.",
+    preview:
+      "Paul is in chains, facing possible execution, and rivals are trying to make his situation worse. Yet this short letter to a church he loves is soaked in joy. He thanks them for their gift, warns them gently, and points them to Christ’s humility. How can someone in prison sound this free?",
+    themes: ["Joy in all circumstances", "Christ’s humility", "Partnership in the gospel", "Contentment"],
+    watchFor: [
+      "Count how many times Paul mentions joy or rejoicing.",
+      "Read the hymn about Christ emptying himself in chapter 2 slowly — it may be one of the earliest Christian songs.",
+      "Notice how Paul treats his impressive credentials in chapter 3.",
+    ],
+    keyVerse: "4:13",
+    summary:
+      "Writing from imprisonment, Paul thanks the Philippians for their faithful partnership and assures them that his chains have actually advanced the gospel. For him, “to live is Christ and to die is gain.” He urges them to have the same mindset as Jesus, who humbled himself even to death on a cross and was then exalted above every name.\n\nPaul counts all his former achievements as loss compared to knowing Christ, and presses on toward the goal. He encourages the church to rejoice always, to replace anxiety with prayer, and to think on whatever is true and lovely, having learned to be content in every situation.",
+    takeaways: [
+      "Joy can be rooted deeper than circumstances.",
+      "Humility, modeled by Christ, is the path to unity.",
+      "Contentment is learned through trust in God’s strength.",
+    ],
+    bridge: "Next, Colossians lifts your eyes to see how supreme and sufficient Christ really is.",
+  },
+  {
+    id: "colossians",
+    name: "Colossians",
+    testament: "NT",
+    genre: "Epistle",
+    author: "Traditionally the apostle Paul (some scholars suggest a close associate)",
+    written: "c. AD 60–62",
+    tagline: "Christ above all, and Christ is all you need.",
+    preview:
+      "A church Paul has never visited is being lured by impressive-sounding spirituality: secret knowledge, strict rules, angel worship. Paul responds with one of the most exalted descriptions of Jesus in the Bible. If Christ holds the universe together, why would anyone need anything more?",
+    themes: ["The supremacy of Christ", "Fullness in Christ", "Freedom from empty rules", "New life together"],
+    watchFor: [
+      "Read the hymn to Christ in 1:15–20 and list everything it says about him.",
+      "Notice what Paul says about rules like “Do not handle, do not taste.”",
+      "Watch for the image of taking off old clothes and putting on new ones in chapter 3.",
+    ],
+    keyVerse: "1:15",
+    summary:
+      "Colossians presents Christ as the image of the invisible God, the one through whom and for whom all things were created, and the head of the church. In him dwells the fullness of God, and believers have been made complete in him. Through the cross he disarmed hostile powers and reconciled all things.\n\nBecause of this, the Colossians need not be intimidated by human traditions or ascetic rules that only look wise. Instead, they are to set their minds on things above, put away anger and deceit, and clothe themselves with compassion, kindness, forgiveness, and above all love, letting Christ’s peace rule in their hearts.",
+    takeaways: [
+      "Jesus is supreme over all creation and all powers.",
+      "In Christ, we already have everything we need.",
+      "New identity shows up in daily kindness and forgiveness.",
+    ],
+    bridge: "Next, 1 Thessalonians lets you meet a young church learning to live with hope.",
+  },
+  {
+    id: "1thessalonians",
+    name: "1 Thessalonians",
+    testament: "NT",
+    genre: "Epistle",
+    author: "The apostle Paul, with Silas and Timothy",
+    written: "c. AD 49–51 (possibly Paul’s earliest surviving letter)",
+    tagline: "A young church, a hard road, and a living hope.",
+    preview:
+      "Paul had to flee Thessalonica after only a few weeks, leaving brand-new believers facing persecution. He’s been worried sick. Now Timothy brings good news: they’re standing firm. But they have questions — especially about loved ones who have died before Jesus returns. What happens to them?",
+    themes: ["Faith under pressure", "Holy living", "Hope in Christ’s return", "Encouragement"],
+    watchFor: [
+      "Notice Paul’s warm, parental language — like a nursing mother and a caring father.",
+      "Watch how Paul comforts grieving believers in chapter 4.",
+      "Look for short, punchy commands at the end, like “Pray continually.”",
+    ],
+    keyVerse: "4:14",
+    summary:
+      "In what may be his earliest letter, Paul overflows with thankfulness for the Thessalonians’ “work of faith, labor of love, and steadfastness of hope.” He reminds them how he lived among them, gently and honestly, and rejoices that their faith has become known far and wide despite suffering.\n\nPaul urges them to live holy lives, to love one another more and more, and to work quietly. To those grieving, he offers hope: just as Jesus died and rose, God will bring with him those who have died. The day of the Lord will come unexpectedly, so they should stay alert, encourage one another, and rejoice always.",
+    takeaways: [
+      "Christian hope changes how we grieve.",
+      "Faith, love, and hope belong together.",
+      "Everyday faithfulness is a way of being ready.",
+    ],
+    bridge: "Next, 2 Thessalonians clears up some panic about the end times — and gets practical.",
+  },
+  {
+    id: "2thessalonians",
+    name: "2 Thessalonians",
+    testament: "NT",
+    genre: "Epistle",
+    author: "Traditionally the apostle Paul (authorship debated by some scholars)",
+    written: "c. AD 50–51",
+    tagline: "Don’t panic, don’t quit — the end isn’t an excuse.",
+    preview:
+      "Rumors are flying in Thessalonica that the day of the Lord has already come. Some believers are alarmed; others have stopped working altogether, waiting for the end. This short letter steadies a shaken church. How should hope about the future shape the way we live today?",
+    themes: ["Perseverance in suffering", "God’s justice", "The day of the Lord", "Faithful work"],
+    watchFor: [
+      "Notice how Paul encourages a persecuted church with the promise of God’s justice.",
+      "Watch for the mysterious “man of lawlessness” in chapter 2 and how Paul uses it to calm fears.",
+      "Look at Paul’s blunt instructions about idleness in chapter 3.",
+    ],
+    keyVerse: "2:15",
+    summary:
+      "Paul commends the Thessalonians for growing faith and love amid persecution and assures them that God will one day set things right. Then he corrects a false report that the day of the Lord has already arrived, explaining that certain events must happen first and urging them not to be shaken or alarmed.\n\nInstead, they should stand firm and hold to the teaching they received. Paul also addresses believers who had stopped working, reminding them of his own example of labor and insisting that hope in Christ’s return should lead to responsible, peaceful, and generous lives, never to idleness.",
+    takeaways: [
+      "God sees suffering and will bring justice.",
+      "Steady faith beats speculation about the end.",
+      "Hope for tomorrow calls for faithfulness today.",
+    ],
+    bridge: "Next, 1 Timothy gives you a letter from a seasoned mentor to a young leader in a tough spot.",
+  },
+  {
+    id: "1timothy",
+    name: "1 Timothy",
+    testament: "NT",
+    genre: "Epistle",
+    author: "Traditionally the apostle Paul (many scholars see a later follower)",
+    written: "c. AD 62–64 (or later, if pseudonymous)",
+    tagline: "A mentor’s charge: guard the truth, lead with integrity.",
+    preview:
+      "Timothy has been left in Ephesus to sort out a church troubled by false teachers and controversy. He’s young, and some look down on him. This letter is a leadership manual and a personal pep talk rolled into one. What makes a church — and its leaders — healthy?",
+    themes: ["Sound teaching", "Godly leadership", "Prayer and worship", "Contentment and generosity"],
+    watchFor: [
+      "Notice Paul’s personal testimony of being the “worst of sinners” shown mercy.",
+      "Watch for the qualifications of church leaders in chapter 3 — they focus on character.",
+      "Look at what Paul says about money and contentment in chapter 6.",
+    ],
+    keyVerse: "1:15",
+    summary:
+      "Paul charges Timothy to confront false teaching that breeds speculation instead of love. He recalls his own story as a former persecutor who received mercy, proof that Christ came into the world to save sinners. He gives guidance on prayer for all people, orderly worship, and the character required of overseers and deacons.\n\nPaul encourages Timothy not to let anyone despise his youth but to set an example in speech, conduct, love, faith, and purity. He addresses care for widows, respect for elders, and the dangers of loving money. Godliness with contentment, he concludes, is great gain.",
+    takeaways: [
+      "Christ came to save sinners, and that includes the worst.",
+      "Character matters more than charisma in leadership.",
+      "Contentment is a quiet, powerful form of wealth.",
+    ],
+    bridge: "Next, 2 Timothy carries Paul’s final words, written from a cold cell as he faces death.",
+  },
+  {
+    id: "2timothy",
+    name: "2 Timothy",
+    testament: "NT",
+    genre: "Epistle",
+    author: "Traditionally the apostle Paul (many scholars see a later follower)",
+    written: "c. AD 64–67 (or later, if pseudonymous)",
+    tagline: "Paul’s last letter: finish the race and pass the torch.",
+    preview:
+      "Paul is in a Roman prison again, but this time he knows the end is near. Many have deserted him, and he asks Timothy to come quickly — and bring his cloak and his books. These are a mentor’s final words. What would you say if you knew it was your last letter?",
+    themes: ["Faithful endurance", "Passing on the faith", "The power of Scripture", "Courage in suffering"],
+    watchFor: [
+      "Notice the tender, personal details — Timothy’s mother and grandmother, Paul’s tears, his lonely requests.",
+      "Watch for the images Paul uses: soldier, athlete, farmer.",
+      "Look at Paul’s reflection on his life in 4:6–8.",
+    ],
+    keyVerse: "3:16",
+    summary:
+      "In his final letter, Paul urges Timothy to fan into flame the gift of God, reminding him that God gives a spirit not of fear but of power, love, and self-control. He encourages him to endure hardship like a good soldier and to entrust the message to faithful people who will teach others in turn.\n\nPaul warns that difficult times will come, with people chasing teachers who say what they want to hear. Timothy should hold to Scripture, which is God-breathed and useful for shaping a life. Paul faces death with peace: he has fought the good fight, finished the race, and kept the faith.",
+    takeaways: [
+      "Faith is meant to be passed on, person to person.",
+      "Scripture equips us for every good work.",
+      "A life poured out for God ends in hope, not regret.",
+    ],
+    bridge: "Next, Titus takes you to the island of Crete, where good teaching must produce good lives.",
+  },
+  {
+    id: "titus",
+    name: "Titus",
+    testament: "NT",
+    genre: "Epistle",
+    author: "Traditionally the apostle Paul (many scholars see a later follower)",
+    written: "c. AD 63–65 (or later, if pseudonymous)",
+    tagline: "Grace that teaches: how good news makes good people.",
+    preview:
+      "Crete had a reputation — even its own poets called Cretans liars. Paul has left Titus there to organize new churches and appoint leaders. In just three chapters, Paul connects what we believe with how we behave. Can grace actually reshape a community’s character?",
+    themes: ["Healthy leadership", "Sound doctrine", "Grace that transforms", "Good works"],
+    watchFor: [
+      "Notice how often Paul mentions “good works” and why he thinks they matter.",
+      "Watch for the compact summaries of the gospel in 2:11–14 and 3:4–7.",
+      "Look at how instructions differ for older men, older women, younger people, and slaves.",
+    ],
+    keyVerse: "2:11",
+    summary:
+      "Paul instructs Titus to appoint elders of good character in every town and to silence teachers who disrupt households for dishonest gain. He then describes how different groups in the church should live in ways that make the teaching about God attractive.\n\nAt the heart of the letter is grace: God’s grace has appeared, bringing salvation and training believers to live self-controlled, upright lives while awaiting their hope. God saved us not because of our righteous deeds but because of his mercy, through the renewing of the Holy Spirit. That mercy should make believers gentle, peaceable, and devoted to doing good.",
+    takeaways: [
+      "Grace saves us and also trains us.",
+      "What we believe should show in how we live.",
+      "Good leaders are known by their character.",
+    ],
+    bridge: "Next, Philemon is a tiny letter about a runaway slave — with huge implications.",
+  },
+  {
+    id: "philemon",
+    name: "Philemon",
+    testament: "NT",
+    genre: "Epistle",
+    author: "The apostle Paul",
+    written: "c. AD 60–62",
+    tagline: "A runaway, a master, and a letter that rewrites relationships.",
+    preview:
+      "Onesimus, a slave, has fled from his master Philemon — and somehow ended up with Paul, where he became a believer. Now Paul sends him back with this short, personal letter. He could command; instead he appeals. What happens when the gospel walks into a broken relationship?",
+    themes: ["Reconciliation", "Brotherhood in Christ", "Love over authority", "Forgiveness"],
+    watchFor: [
+      "Notice the wordplay: Onesimus means “useful,” and Paul says he was once useless but now useful.",
+      "Watch how Paul uses gentle persuasion rather than apostolic orders.",
+      "Look for Paul’s offer to pay any debt himself — and how it echoes the gospel.",
+    ],
+    keyVerse: "1:16",
+    summary:
+      "In just twenty-five verses, Paul appeals to Philemon, a church host and friend, to welcome back Onesimus, who has become a believer and a beloved helper to Paul. Paul asks Philemon to receive him “no longer as a slave, but more than a slave, as a dear brother.”\n\nPaul offers to cover any debt Onesimus owes, and he expresses confidence that Philemon will do even more than asked. The letter doesn’t lay out a full social program, but it plants a radical seed: in Christ, a master and a slave stand as equals, family members bound by love.",
+    takeaways: [
+      "The gospel reshapes even deeply unequal relationships.",
+      "Love persuades where power might command.",
+      "Reconciliation sometimes needs someone willing to pay the cost.",
+    ],
+    bridge: "Next, Hebrews makes a sweeping case that Jesus is better than everything that came before.",
+  },
+  {
+    id: "hebrews",
+    name: "Hebrews",
+    testament: "NT",
+    genre: "Epistle / Sermon",
+    author: "Unknown (suggestions include Paul, Apollos, Barnabas, or Priscilla)",
+    written: "c. AD 60–90 (many favor before AD 70)",
+    tagline: "Better than angels, better than Moses — don’t drift away now.",
+    preview:
+      "A community of believers is tired. Persecution has worn them down, and some are tempted to drift back to familiar ways. The anonymous author writes a stirring sermon showing that Jesus fulfills everything the old covenant pointed to. If Jesus is truly greater, why would anyone turn back?",
+    themes: ["The superiority of Christ", "Jesus our high priest", "The new covenant", "Faith and perseverance"],
+    watchFor: [
+      "Notice the repeated word “better” — better covenant, better promises, better sacrifice.",
+      "Watch for urgent warning passages woven between the arguments.",
+      "Read the “hall of faith” in chapter 11 and ask what these people had in common.",
+    ],
+    keyVerse: "11:1",
+    summary:
+      "Hebrews argues that Jesus, the Son who radiates God’s glory, is greater than angels, Moses, and the priests of the old covenant. He is the perfect high priest who understands our weakness, having been tempted in every way yet without sin. His once-for-all sacrifice accomplishes what the repeated sacrifices of the tabernacle only foreshadowed, establishing a new covenant written on hearts.\n\nThe author urges readers to hold fast and not drift away. Chapter 11 recounts a great cloud of witnesses who lived by faith without seeing the promise fulfilled. Surrounded by them, believers are to run with endurance, fixing their eyes on Jesus.",
+    takeaways: [
+      "Jesus is the fulfillment of everything God promised.",
+      "We have a high priest who understands our struggles.",
+      "Faith means persevering toward what we cannot yet see.",
+    ],
+    bridge: "Next, James gets practical — blunt wisdom on what living faith actually looks like.",
+  },
+  {
+    id: "james",
+    name: "James",
+    testament: "NT",
+    genre: "Epistle / Wisdom",
+    author: "Traditionally James, the brother of Jesus and leader of the Jerusalem church",
+    written: "c. AD 45–62",
+    tagline: "Faith that doesn’t do anything isn’t really faith.",
+    preview:
+      "James reads like a book of Proverbs with sharp edges. Written by a church leader traditionally identified as Jesus’ own brother, it tackles trials, wealth, favoritism, and the tongue. It is short, punchy, and uncomfortable. Does your faith actually change how you live?",
+    themes: ["Faith and works", "Wisdom in trials", "Taming the tongue", "Justice for the poor"],
+    watchFor: [
+      "Notice the echoes of Jesus’ Sermon on the Mount throughout the letter.",
+      "Watch how James treats rich and poor, and favoritism in church.",
+      "Look at his vivid images for the tongue: a bit, a rudder, a spark.",
+    ],
+    keyVerse: "2:17",
+    summary:
+      "James urges believers to consider trials an opportunity for growth and to ask God for wisdom without doubting. He insists that hearing the word isn’t enough; we must do it. True religion cares for orphans and widows and keeps oneself unstained by the world.\n\nJames condemns favoritism toward the wealthy and declares that faith without works is dead, pointing to Abraham and Rahab as examples of faith in action. He warns about the destructive power of the tongue, the roots of conflict in selfish desire, and the arrogance of wealth. He ends by calling for patience, honest speech, and prayer, which is powerful and effective.",
+    takeaways: [
+      "Real faith shows up in action.",
+      "Our words carry enormous power for good or harm.",
+      "God cares deeply about how we treat the poor.",
+    ],
+    bridge: "Next, 1 Peter offers hope to believers who feel like strangers in their own world.",
+  },
+  {
+    id: "1peter",
+    name: "1 Peter",
+    testament: "NT",
+    genre: "Epistle",
+    author: "Traditionally the apostle Peter, with help from Silvanus (some scholars suggest a later disciple)",
+    written: "c. AD 62–64 (or later)",
+    tagline: "Strangers in this world, chosen for a living hope.",
+    preview:
+      "Christians scattered across Asia Minor are facing slander, suspicion, and suffering for their faith. They feel like exiles. Peter — the disciple who once denied Jesus — writes to remind them who they really are. How do you live with hope when the world treats you as an outsider?",
+    themes: ["Living hope", "Suffering and glory", "Holy identity", "Good conduct among outsiders"],
+    watchFor: [
+      "Notice how Peter calls believers “exiles” and “foreigners” and what that implies.",
+      "Watch how the suffering of Jesus becomes a model for responding to injustice.",
+      "Look at the rich titles in chapter 2 borrowed from Israel’s story.",
+    ],
+    keyVerse: "2:9",
+    summary:
+      "Peter begins with praise for the living hope believers have through Jesus’ resurrection — an inheritance that cannot perish. Trials refine faith like fire refines gold. Believers are called to be holy, to love one another deeply, and to see themselves as living stones built into a spiritual house: a chosen people, a royal priesthood.\n\nPeter urges them to live such good lives among outsiders that even critics notice. When they suffer unjustly, they follow Christ’s example, who did not retaliate. He encourages humility, readiness to explain their hope with gentleness, and trust in God, who cares for them and will restore them after suffering.",
+    takeaways: [
+      "Our hope is anchored in the risen Jesus.",
+      "Suffering is not the end of the story.",
+      "Who we are in Christ shapes how we treat others.",
+    ],
+    bridge: "Next, 2 Peter delivers a final warning — and a reminder that God’s patience has a purpose.",
+  },
+  {
+    id: "2peter",
+    name: "2 Peter",
+    testament: "NT",
+    genre: "Epistle",
+    author: "Traditionally the apostle Peter (authorship widely debated by scholars)",
+    written: "c. AD 64–68 (or later, if pseudonymous)",
+    tagline: "Remember, grow, and don’t be fooled — the Lord is patient.",
+    preview:
+      "Written as a farewell testament with death approaching, this letter warns of false teachers who mock the idea that Jesus will ever return. “Everything goes on as it has since the beginning,” they scoff. Why hasn’t the promised day come yet — and what should we do while we wait?",
+    themes: ["Growth in godliness", "Reliable testimony", "False teachers", "The patience of God"],
+    watchFor: [
+      "Notice the ladder of virtues in chapter 1, from faith to love.",
+      "Watch for Peter’s eyewitness memory of the Transfiguration.",
+      "Look at the explanation for God’s apparent delay in chapter 3.",
+    ],
+    keyVerse: "1:3",
+    summary:
+      "2 Peter encourages believers to grow in faith by adding goodness, knowledge, self-control, perseverance, godliness, kindness, and love, since God’s power has given them everything they need. Peter reminds readers that the message about Christ is no clever myth; he witnessed Jesus’ glory on the mountain.\n\nThe letter warns sharply against false teachers who exploit others and indulge themselves. To those who scoff at the delay of Christ’s return, Peter answers that with the Lord a day is like a thousand years, and God is patient, not wanting anyone to perish. A new heaven and earth are coming, so believers should live holy lives and grow in grace.",
+    takeaways: [
+      "God has given us what we need to grow.",
+      "God’s apparent delay is an act of mercy.",
+      "Keep growing in grace and knowledge of Jesus.",
+    ],
+    bridge: "Next, 1 John explores what it means to truly know God — and the answer is love.",
+  },
+  {
+    id: "1john",
+    name: "1 John",
+    testament: "NT",
+    genre: "Epistle",
+    author: "Traditionally the apostle John",
+    written: "c. AD 85–100",
+    tagline: "God is love — and that changes how you live.",
+    preview:
+      "A church has been shaken by a split; some members have left, spreading teaching that denies Jesus truly came in the flesh. Those who remain wonder: are we really right with God? John writes like a loving elder to reassure them. How can you know that you know God?",
+    themes: ["God is love", "Walking in the light", "Assurance of salvation", "Truth about Jesus"],
+    watchFor: [
+      "Notice the repeated phrase “by this we know” and the tests John gives.",
+      "Watch for John’s contrasts: light and darkness, truth and lies, love and hate.",
+      "Look at how John ties love for God directly to love for others.",
+    ],
+    keyVerse: "4:8",
+    summary:
+      "1 John opens with eyewitness testimony to the Word of life that was heard, seen, and touched. John calls readers to walk in the light, confess their sins, and trust Jesus, who is faithful to forgive. Knowing God shows up in obeying his commands, especially the command to love one another.\n\nJohn warns against those who deny that Jesus is the Christ come in the flesh. Then he soars: God is love, and love was revealed when God sent his Son. Perfect love drives out fear. Those who believe in the Son can know with confidence that they have eternal life.",
+    takeaways: [
+      "God’s very nature is love.",
+      "Love for God and love for others are inseparable.",
+      "We can have confident assurance in Christ.",
+    ],
+    bridge: "Next, 2 John is a short, warm note about walking in truth and love together.",
+  },
+  {
+    id: "2john",
+    name: "2 John",
+    testament: "NT",
+    genre: "Epistle",
+    author: "Traditionally the apostle John, writing as “the elder”",
+    written: "c. AD 85–100",
+    tagline: "Truth and love: never one without the other.",
+    preview:
+      "This brief letter is addressed to “the chosen lady and her children,” likely a congregation. Traveling teachers are visiting churches, and not all of them teach the truth about Jesus. How do you stay loving and open while still guarding what matters most?",
+    themes: ["Walking in truth", "Love one another", "Guarding against deception", "Hospitality with discernment"],
+    watchFor: [
+      "Notice how often “truth” and “love” appear together.",
+      "Watch for who “the chosen lady” might be — a person or a church.",
+      "Look at John’s instruction about welcoming teachers and why it matters.",
+    ],
+    keyVerse: "1:6",
+    summary:
+      "The elder rejoices that some of the church’s members are walking in the truth and reminds them of the command they’ve had from the beginning: love one another. Love, he explains, means walking according to God’s commands.\n\nHe warns that many deceivers have gone out who do not acknowledge Jesus Christ as coming in the flesh, and urges the church not to support or host such teachers. The letter ends with the hope of a face-to-face visit, so that their joy may be complete. In just a few lines, 2 John holds truth and love together.",
+    takeaways: [
+      "Love is shown by walking in God’s ways.",
+      "Truth about Jesus is worth guarding.",
+      "Real fellowship is best face to face.",
+    ],
+    bridge: "Next, 3 John offers a glimpse into church life — one generous host and one power-hungry leader.",
+  },
+  {
+    id: "3john",
+    name: "3 John",
+    testament: "NT",
+    genre: "Epistle",
+    author: "Traditionally the apostle John, writing as “the elder”",
+    written: "c. AD 85–100",
+    tagline: "Generous Gaius, domineering Diotrephes: whose example will you follow?",
+    preview:
+      "The shortest book in the New Testament is a personal note to a friend named Gaius. He has been welcoming traveling missionaries, while a church leader named Diotrephes refuses them and loves to be first. It’s a snapshot of real church politics. What kind of person builds up God’s people?",
+    themes: ["Hospitality", "Faithfulness to the truth", "Humble leadership", "Imitating good"],
+    watchFor: [
+      "Notice the three named people — Gaius, Diotrephes, and Demetrius — and how each is described.",
+      "Watch how John values hospitality to strangers as partnership in the truth.",
+      "Look at the simple instruction “Do not imitate what is evil but what is good.”",
+    ],
+    keyVerse: "1:4",
+    summary:
+      "The elder writes warmly to his dear friend Gaius, praising him for walking in the truth and for showing hospitality to traveling believers, even strangers. Supporting such workers, he says, makes us fellow workers for the truth.\n\nIn contrast, Diotrephes loves to be first, spreads malicious gossip, refuses to welcome the brothers, and even throws out those who do. John encourages Gaius to imitate what is good, commends a faithful man named Demetrius, and closes hoping to talk face to face. This tiny letter shows that character and generosity matter in the life of a church.",
+    takeaways: [
+      "Hospitality is a powerful way to serve God’s work.",
+      "Leadership is about serving, not being first.",
+      "Choose carefully whose example you follow.",
+    ],
+    bridge: "Next, Jude delivers a short, urgent call to contend for the faith.",
+  },
+  {
+    id: "jude",
+    name: "Jude",
+    testament: "NT",
+    genre: "Epistle",
+    author: "Traditionally Jude, brother of James and of Jesus",
+    written: "c. AD 60–80",
+    tagline: "Contend for the faith — and rest in the One who keeps you.",
+    preview:
+      "Jude wanted to write about the salvation he shared with his readers, but something urgent changed his plans. Ungodly people have slipped into the church, twisting grace into an excuse for immorality. Jude writes a fiery warning packed with vivid images. How do you stand firm when danger is inside the walls?",
+    themes: ["Contending for the faith", "Warning against false teachers", "God’s judgment", "God’s keeping power"],
+    watchFor: [
+      "Notice the vivid images for false teachers: clouds without rain, wandering stars.",
+      "Watch for references to Old Testament stories and Jewish tradition, like Enoch.",
+      "Read the closing doxology slowly — it’s one of the most beautiful in Scripture.",
+    ],
+    keyVerse: "1:24",
+    summary:
+      "Jude urges believers to contend for the faith once for all entrusted to God’s people, because certain individuals have crept in who pervert grace into license and deny Jesus Christ. Using examples from Israel’s history — the wilderness generation, fallen angels, Sodom and Gomorrah, Cain, Balaam, and Korah — he shows that God takes such rebellion seriously.\n\nBut Jude’s letter ends with tenderness. He calls readers to build themselves up in faith, pray in the Spirit, keep themselves in God’s love, and show mercy to those who doubt. Finally, he praises the God who is able to keep them from stumbling and present them blameless with great joy.",
+    takeaways: [
+      "The faith is worth defending with courage.",
+      "Mercy should mark how we treat those who waver.",
+      "God is able to keep us from falling.",
+    ],
+    bridge: "Next, Revelation pulls back the curtain on heaven and shows how the whole story ends.",
+  },
+  {
+    id: "revelation",
+    name: "Revelation",
+    testament: "NT",
+    genre: "Apocalyptic / Prophecy",
+    author: "John, traditionally identified as the apostle John, exiled on Patmos",
+    written: "c. AD 90–96 (some suggest the late 60s)",
+    tagline: "Dragons, thrones, a slain Lamb — and all things made new.",
+    preview:
+      "Exiled on the island of Patmos, John sees a vision of the risen Jesus blazing with glory. What follows is a whirlwind of symbols: seals, trumpets, beasts, a dragon, and a Lamb who was slain yet stands victorious. Written to persecuted churches, it’s less a puzzle about the future than a call to faithful courage. Who really rules the world?",
+    themes: ["Christ’s victory", "Faithful witness", "God’s justice", "New creation"],
+    watchFor: [
+      "Notice the letters to seven real churches in chapters 2–3 and what each needed to hear.",
+      "Watch for the number seven and other symbols drawn from Old Testament prophets like Daniel and Ezekiel.",
+      "Look at the worship scenes in heaven — they often interrupt moments of chaos on earth.",
+    ],
+    keyVerse: "21:5",
+    summary:
+      "Revelation opens with a vision of the risen Christ and messages to seven churches in Asia Minor, calling them to faithfulness. John is then taken into heaven’s throne room, where all creation worships the One on the throne and the Lamb who was slain. Through cycles of seals, trumpets, and bowls, the book portrays the struggle between God and the forces of evil, symbolized by the dragon, the beasts, and Babylon.\n\nIn the end, evil is defeated and God’s justice prevails. A new heaven and new earth appear, and the holy city descends. God dwells with his people, wiping away every tear. Death is gone, and the river and tree of life flow freely.",
+    takeaways: [
+      "Jesus, the slain Lamb, is the true ruler of history.",
+      "Faithfulness matters, even when it costs.",
+      "God’s story ends with everything made new.",
+    ],
+    bridge:
+      "The Bible ends where it began — with a garden, a river, and the tree of life — so turn back to Genesis and read “In the beginning” again with new eyes.",
+  },
+];
